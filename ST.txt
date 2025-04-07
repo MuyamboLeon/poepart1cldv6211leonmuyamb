@@ -1,0 +1,6 @@
+Link to my published database to azure 
+https://bookingeaseevent.azurewebsites.net
+
+
+GitHub link
+https://github.com/MuyamboLeon/assignment1cdv.git

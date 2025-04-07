@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PoepartWebapp.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Venue.VenueName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Venue.VenueName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BookingID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BookingID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BookingID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    <a href="@Url.Action("Index", "Venue")" class="button-link">Go to Venues</a> |
+    <a href="@Url.Action("Index", "Event")" class="button-link">Go to Events</a>
+</p>
+
+<style>
+    .button-link {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+</style>
